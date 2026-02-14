@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+  <div class="card">
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+      <button onclick="goToGallery()">Yes 🥰</button>
+      <button onclick="goToGallery()">Hell yes absolutely 😍</button>
+      
+    </div>
+</button>
+  </div>
+
+  <script>
+  function goToGallery() {
+    window.location.href = "gallery.html";
+  }
+ function goToForever() {
+    window.location.href = "forever.html";
+  }
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = Math.random() > 0.5 ? "💗" : "💖";
+
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    heart.style.fontSize = (10 + Math.random() * 10) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+
+<div class="heart-rain"></div>
+
+
+</body>
+</html>
