@@ -8,30 +8,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
+  <audio id="bg-music" loop>
+  <source src="assets/music/love.mp3" type="audio/mpeg">
+</audio>
+
 
   <div class="card">
     <h1>Will you be my Valentine? 💖</h1>
 
     <div class="buttons">
-      <button onclick="goToGallery()">Yes 🥰</button>
-      <button onclick="goToGallery()">Hell yes absolutely 😍</button>
-      
-    </div>
+  <button onclick="startMusicAndGo()">Yes 🥰</button>
+  <button onclick="startMusicAndGo()">Hell yes absolutely 😍</button>
+</div>
+
 </button>
   </div>
 
-  <script>
-  function goToGallery() {
+ <script>
+  function startMusicAndGo() {
+    const audio = document.getElementById("bg-music");
+
+    audio.volume = 0.6;
+    audio.play().catch(() => {
+      console.log("Audio blocked until user interaction");
+    });
+
     window.location.href = "gallery.html";
   }
- function goToForever() {
-    window.location.href = "forever.html";
-  }
+
   function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerText = Math.random() > 0.5 ? "💗" : "💖";
-
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (4 + Math.random() * 3) + "s";
@@ -47,8 +55,7 @@
   setInterval(createHeart, 300);
 </script>
 
+
 <div class="heart-rain"></div>
-
-
 </body>
 </html>
