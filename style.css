@@ -190,3 +190,14 @@ button {
     padding: 14px 22px;
   }
 }
+.love-lines {
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  margin-top: 25px;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.strong-love {
+  font-size: clamp(1.6rem, 6vw, 2rem);
+  margin-top: 15px;
+}
